@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Frontend.ViewModels.ProductsViewModel>
+
+@{ViewData["Title"] = "Products";}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <h2>Featured Products</h2>
+        </div>
+        @foreach (var item in Model)
+        {
+            if (item.ProductType.ToString() == "Featured")
+            {
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                    <div class="card">
+                     <img src="https://via.placeholder.com/300x300" class="card-img-top" alt="Product Image">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Title</h5>
+                            <p class="card-text">@item.Price💲</p>
+                            <p class="card-text">@item.Description📖</p>
+                            <p class="card-text">@item.Rating/5✨</p>
+                            <a href="Products/Details/@item.Id?key=755d128a-d2ae-43f9-a521-41712709f1b5" class="btn btn-primary">Details</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2>Popular Products</h2>
+        </div>
+        @foreach (var item in Model)
+        {
+            if (item.ProductType.ToString() == "Popular")
+            {
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x300" class="card-img-top" alt="Product Image">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Title</h5>
+                            <p class="card-text">@item.Price💲</p>
+                            <p class="card-text">@item.Description📖</p>
+                            <p class="card-text">@item.Rating/5✨</p>
+                            <a href="Products/Details/@item.Id?key=755d128a-d2ae-43f9-a521-41712709f1b5" class="btn btn-primary">Details</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2>New Products</h2>
+        </div>
+        @foreach (var item in Model)
+        {
+            if (item.ProductType.ToString() == "New")
+            {
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x300" class="card-img-top" alt="Product Image">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Title</h5>
+                            <p class="card-text">@item.Price💲</p>
+                            <p class="card-text">@item.Description📖</p>
+                            <p class="card-text">@item.Rating/5✨</p>
+                            <a href="Products/Details/@item.Id?key=755d128a-d2ae-43f9-a521-41712709f1b5" class="btn btn-primary">Details</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
